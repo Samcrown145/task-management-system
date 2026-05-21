@@ -1,7 +1,7 @@
 :root {
   --primary: #6366f1;
   --primary-hover: #4f46e5;
-  --bg: #f1f5f9; /* Refined slate-50 for a cleaner look */
+  --bg: #f1f5f9; 
   --card-bg: #ffffff;
   --text-main: #1e293b;
   --text-muted: #64748b;
@@ -15,8 +15,8 @@
 }
 
 [data-theme='dark'] {
-  --bg: #020617; /* Deepest Navy */
-  --card-bg: #0f172a; /* Slate-900 */
+  --bg: #020617;  
+  --card-bg: #0f172a;  
   --text-main: #f1f5f9;
   --text-muted: #94a3b8;
   --border: #1e293b;

@@ -16,7 +16,7 @@
   to { opacity: 1; transform: translateX(0); }
 }
 
-/* Staggered animation for the first 5 items */
+ 
 .task-item:nth-child(1) { animation-delay: 0.1s; }
 .task-item:nth-child(2) { animation-delay: 0.15s; }
 .task-item:nth-child(3) { animation-delay: 0.2s; }
@@ -96,29 +96,29 @@
 }
 
 .status-pending { 
-  background: #fff7ed; /* Lighter orange-yellow */
-  color: #c2410c; /* Darker orange */
-  border-color: #fed7aa; /* Medium orange */
+  background: #fff7ed;  
+  color: #c2410c;  
+  border-color: #fed7aa;  
 }
-.status-pending::before { background: #f97316; /* Strong orange */ }
+.status-pending::before { background: #f97316;   }
 
 .status-completed { 
-  background: #ecfdf5; /* Lighter green */
-  color: #047857; /* Darker green */
-  border-color: #a7f3d0; /* Medium green */
+  background: #ecfdf5;  
+  color: #047857;  
+  border-color: #a7f3d0; 
 }
-.status-completed::before { background: #10b981; /* Strong green */ }
+.status-completed::before { background: #10b981;}
 
 [data-theme='dark'] .status-pending {
-  background: rgba(251, 191, 36, 0.15); /* Yellow with transparency */
-  color: #fcd34d; /* Brighter yellow */
+  background: rgba(251, 191, 36, 0.15);  
+  color: #fcd34d;  
   border-color: rgba(251, 191, 36, 0.3);
 }
 [data-theme='dark'] .status-pending::before { background: #fcd34d; }
 
 [data-theme='dark'] .status-completed {
-  background: rgba(52, 211, 153, 0.15); /* Green with transparency */
-  color: #6ee7b7; /* Brighter green */
+  background: rgba(52, 211, 153, 0.15); 
+  color: #6ee7b7 ;
   border-color: rgba(52, 211, 153, 0.3);
 }
 [data-theme='dark'] .status-completed::before { background: #6ee7b7; }
@@ -131,7 +131,7 @@
 }
 
 .btn-icon {
-  background: #f8fafc; /* Subtle background to "highlight" the button box */
+  background: #f8fafc;  
   border: 1px solid #e2e8f0;
   width: 38px;
   height: 38px;
@@ -160,7 +160,7 @@
     margin-left: 0;
     margin-top: 1.25rem;
     padding-top: 1rem;
-    border-top: 1px solid var(--border); /* Visual separator for the action box */
+    border-top: 1px solid var(--border); 
     justify-content: flex-end;
   }
 
@@ -177,6 +177,6 @@
   
   .btn-icon {
     flex: 1;
-    height: 48px; /* Larger touch target for very small screens */
+    height: 48px;  
   }
 }

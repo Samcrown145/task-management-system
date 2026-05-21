@@ -112,7 +112,7 @@
   .stats-card {
     width: 100%;
     display: flex;
-    flex-direction: column; /* Stacked text on mobile */
+    flex-direction: column;  
     align-items: center;
   }
 
