@@ -1,0 +1,182 @@
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  background: var(--card-bg);
+  transition: var(--transition);
+  animation: slideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Staggered animation for the first 5 items */
+.task-item:nth-child(1) { animation-delay: 0.1s; }
+.task-item:nth-child(2) { animation-delay: 0.15s; }
+.task-item:nth-child(3) { animation-delay: 0.2s; }
+.task-item:nth-child(4) { animation-delay: 0.25s; }
+.task-item:nth-child(5) { animation-delay: 0.3s; }
+
+.task-item:hover {
+  transform: scale(1.02) translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.task-content {
+  display: flex;
+  gap: 1.25rem;
+  flex: 1;
+}
+
+.task-checkbox {
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-top: 0.2rem;
+  cursor: pointer;
+  accent-color: var(--primary);
+  border-radius: 6px;
+}
+
+.task-info { flex: 1; }
+
+.task-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  transition: var(--transition);
+  word-break: break-word;
+}
+
+.completed .task-title {
+  text-decoration: line-through;
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.task-description {
+  color: var(--text-muted);
+  font-size: 0.935rem;
+  margin-bottom: 1rem;
+  word-break: break-word;
+}
+
+.task-meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.task-status {
+  padding: 0.25rem 0.65rem;
+  border-radius: 8px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.075em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid transparent;
+}
+
+.task-status::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.status-pending { 
+  background: #fff7ed; /* Lighter orange-yellow */
+  color: #c2410c; /* Darker orange */
+  border-color: #fed7aa; /* Medium orange */
+}
+.status-pending::before { background: #f97316; /* Strong orange */ }
+
+.status-completed { 
+  background: #ecfdf5; /* Lighter green */
+  color: #047857; /* Darker green */
+  border-color: #a7f3d0; /* Medium green */
+}
+.status-completed::before { background: #10b981; /* Strong green */ }
+
+[data-theme='dark'] .status-pending {
+  background: rgba(251, 191, 36, 0.15); /* Yellow with transparency */
+  color: #fcd34d; /* Brighter yellow */
+  border-color: rgba(251, 191, 36, 0.3);
+}
+[data-theme='dark'] .status-pending::before { background: #fcd34d; }
+
+[data-theme='dark'] .status-completed {
+  background: rgba(52, 211, 153, 0.15); /* Green with transparency */
+  color: #6ee7b7; /* Brighter green */
+  border-color: rgba(52, 211, 153, 0.3);
+}
+[data-theme='dark'] .status-completed::before { background: #6ee7b7; }
+
+.task-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 1rem;
+  flex-shrink: 0;
+}
+
+.btn-icon {
+  background: #f8fafc; /* Subtle background to "highlight" the button box */
+  border: 1px solid #e2e8f0;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+[data-theme='dark'] .btn-icon {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.btn-edit:hover { background: #eff6ff; border-color: #3b82f6; color: #3b82f6; }
+.btn-delete:hover { background: #fef2f2; border-color: #ef4444; color: #ef4444; }
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .task-item {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.25rem;
+  }
+
+  .task-actions {
+    margin-left: 0;
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border); /* Visual separator for the action box */
+    justify-content: flex-end;
+  }
+
+  .btn-icon {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (max-width: 400px) {
+  .task-actions {
+    justify-content: stretch;
+  }
+  
+  .btn-icon {
+    flex: 1;
+    height: 48px; /* Larger touch target for very small screens */
+  }
+}
